@@ -18,6 +18,13 @@ function makeGrid() {
   drawGrid(size);
 }
 
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 function drawGrid(size) {
   gridbox.innerHTML = "";
   const boxSize = 640 / size;
@@ -29,7 +36,8 @@ function drawGrid(size) {
     div.style.height = `${boxSize}px`;
 
     div.addEventListener("mouseenter", function (e) {
-      e.target.style.backgroundColor = "black";
+      const randomColor = getRandomColor();
+      e.target.style.backgroundColor = randomColor;
     });
     gridbox.appendChild(div);
   }
