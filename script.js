@@ -35,7 +35,7 @@ function drawGrid(size) {
     div.style.width = `${boxSize}px`;
     div.style.height = `${boxSize}px`;
 
-    div.addEventListener("mouseenter", function (e) {
+    div.addEventListener("click", function (e) {
       const randomColor = getRandomColor();
       e.target.style.backgroundColor = randomColor;
       let currentOpacity = e.target.style.opacity
