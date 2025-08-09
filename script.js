@@ -38,6 +38,15 @@ function drawGrid(size) {
     div.addEventListener("mouseenter", function (e) {
       const randomColor = getRandomColor();
       e.target.style.backgroundColor = randomColor;
+      let currentOpacity = e.target.style.opacity
+        ? parseFloat(e.target.style.opacity)
+        : 0.2;
+
+      currentOpacity += 0.1;
+      if (Number(currentOpacity) > 1) {
+        currentOpacity = 0.2;
+      }
+      e.target.style.opacity = currentOpacity.toString();
     });
     gridbox.appendChild(div);
   }
