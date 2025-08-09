@@ -35,7 +35,7 @@ function drawGrid(size) {
     div.style.width = `${boxSize}px`;
     div.style.height = `${boxSize}px`;
 
-    div.addEventListener("click", function (e) {
+    div.addEventListener("mouseenter", function (e) {
       const randomColor = getRandomColor();
       e.target.style.backgroundColor = randomColor;
       let currentOpacity = e.target.style.opacity
@@ -46,7 +46,7 @@ function drawGrid(size) {
       if (Number(currentOpacity) > 1) {
         currentOpacity = 0.2;
       }
-      e.target.style.opacity = currentOpacity.toString();
+      e.target.style.opacity = currentOpacity.toString(0);
     });
     gridbox.appendChild(div);
   }
