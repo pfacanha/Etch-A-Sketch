@@ -46,7 +46,7 @@ function drawGrid(size) {
       if (Number(currentOpacity) > 1) {
         currentOpacity = 0.2;
       }
-      e.target.style.opacity = currentOpacity.toString(0);
+      e.target.style.opacity = currentOpacity.toString();
     });
     gridbox.appendChild(div);
   }
